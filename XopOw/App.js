@@ -39,7 +39,7 @@ export default function App() {
           })}
         >
           <Tab.Screen name={SCREEN_HOME} component={Home} options={{ title: 'Home', headerStyle: { backgroundColor: '#f4511e' } }} />
-          <Tab.Screen name={SCREEN_COMPASS} component={Compass} options={{ title: 'Map' }} />
+          <Tab.Screen name={SCREEN_COMPASS} component={Compass} options={{ title: 'Compass' }} />
           <Tab.Screen name={SCREEN_COORDINATES} component={Coordinates} options={{ title: 'Coordinates' }} />
         </Tab.Navigator>
       </NavigationContainer>

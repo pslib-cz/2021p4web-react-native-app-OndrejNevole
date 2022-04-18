@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, TextInput, StyleSheet  } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
 import * as Location from 'expo-location';
 import { Button } from 'react-native-web';
-import Geo_Location from '../services/location';
 
-export const Coordinates = props => {
+const Geo_Location = ({Lat, Lon}) => {
     const [errorMsg, setErrorMsg] = useState('null');
     const [lat, setLat] = useState('null');
     const [lon, setLon] = useState('null');
-  /*
-    let dkLat = 'null';
-    let dkLon = 'null';
-
-    Geo_Location(dkLat, dkLon);
-
-    setLat(dkLat);
-    setLon(dkLon);*/
+  
+    let laat;
+    let loon;
 
     useEffect(() => {
       (async () => {
@@ -32,24 +25,20 @@ export const Coordinates = props => {
         setLon(Glon);
       })();
     }, []);
-  
-    let _lat = 'Waiting..';
-    let _lon = 'waiting..';
+
     if (errorMsg) {
-        _lat = errorMsg;
+        laat = errorMsg;
     } else if (lat) {
-        _lat = JSON.stringify(lat);
-        console.log(_lat);
-        _lon = JSON.stringify(lon);
-        console.log(_lon);
+        laat = JSON.stringify(lat);
+        console.log(laat);
+        loon = JSON.stringify(lon);
+        console.log(loon);
     }
 
-    return (
-        <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Current Coordinates</Text>
-            <Text>{lat}, {lon}</Text>
-        </SafeAreaView>
-    );
+    return {
+        Lat: laat,
+        Lon: loon
+    };
 }
 
-export default Coordinates;
+export default Geo_Location;
