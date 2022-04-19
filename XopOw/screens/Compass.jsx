@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
 import { Magnetometer } from 'expo-sensors';
+import React, { useState, useEffect } from 'react';
 
 export const Compass = props => {
     const [data, setData] = useState({
@@ -60,6 +60,13 @@ export const Compass = props => {
             </View>
         </SafeAreaView>
     );
+}
+
+function round(n) {
+  if (!n) {
+    return 0;
+  }
+  return Math.floor(n * 100) / 100;
 }
 
 const styles = StyleSheet.create({

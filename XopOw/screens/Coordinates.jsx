@@ -3,7 +3,7 @@ import { Text, View, TextInput, StyleSheet  } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
 import * as Location from 'expo-location';
 import { Button } from 'react-native-web';
-import Geo_Location from '../services/location';
+//import Geo_Location from '../services/Location';
 
 export const Coordinates = props => {
     const [errorMsg, setErrorMsg] = useState('null');

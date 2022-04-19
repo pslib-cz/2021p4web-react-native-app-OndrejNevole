@@ -28,8 +28,8 @@ export default function App() {
               let iconName;
               switch (route.name) {
                 case SCREEN_HOME : iconName = "home-sharp"; break;
-                case SCREEN_COMPASS : iconName = "map-sharp"; break;
-                case SCREEN_COORDINATES : iconName = "camera-sharp"; break;
+                case SCREEN_COMPASS : iconName = "compass-sharp"; break;
+                case SCREEN_COORDINATES : iconName = "location-sharp"; break;
                 default: iconName = "information-circle";
               }
               return <Ionicons name={iconName} size={size} color={color} />;
@@ -38,7 +38,7 @@ export default function App() {
             tabBarInactiveTintColor: 'gray',
           })}
         >
-          <Tab.Screen name={SCREEN_HOME} component={Home} options={{ title: 'Home', headerStyle: { backgroundColor: '#f4511e' } }} />
+          <Tab.Screen name={SCREEN_HOME} component={Home} options={{ title: 'Home' }} />
           <Tab.Screen name={SCREEN_COMPASS} component={Compass} options={{ title: 'Compass' }} />
           <Tab.Screen name={SCREEN_COORDINATES} component={Coordinates} options={{ title: 'Coordinates' }} />
         </Tab.Navigator>
