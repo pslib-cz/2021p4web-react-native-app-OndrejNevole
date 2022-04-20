@@ -8,6 +8,7 @@ import {Getlat, Getlon} from '../services/Location';
 export const Coordinates = props => {
     let lat = Getlat();
     let lon = Getlon();
+    
     return (
         <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Current Coordinates</Text>

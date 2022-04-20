@@ -7,18 +7,19 @@ import SafeAreaView from 'react-native-safe-area-view';
 export const Home = props => {
     const [dLat, setDLat] = useState(50.76526942546564);
     const [dLon, setDLon] = useState(15.053161193749785);
-    const [lat, setLat] = useState(0);
-    const [lon, setLon] = useState(0);
-    //let lat = Getlat();
-    //let lon = Getlon();
+    //const [lat, setLat] = useState(0);
+    //const [lon, setLon] = useState(0);
+    let lat = Getlat();
+    let lon = Getlon();
     let compass = Angle() - 90;
     let _Angle = 0;
 
-    const locationReset = props => {
-        let dklat = Getlat();
-        let fklon = Getlon();
-        setLat(dklat);
-        setLon(fklon);
+    function LocationresetLat() {
+        return Getlat();
+    }
+
+    function LocationresetLon() {
+        return Getlon()
     }
 
     return (
@@ -44,7 +45,8 @@ export const Home = props => {
                 <Text>{lat}</Text>
                 <Text>{lon}</Text>
                 <Button title='reset position' onPress={() => {
-                    locationReset();
+                    //lat = LocationresetLat();
+                    //lon = LocationresetLon();
                 }} ></Button>
             </View>
         </SafeAreaView>
